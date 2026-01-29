@@ -31,22 +31,53 @@ body {
     max-width: 100%;
     height: auto;
   }
-.marquee {
+.marquee-container {
   width: 100%;
   overflow: hidden;
+  position: relative;
+  height: 80px;
+}
+
+#marqueeText {
+  position: absolute;
   white-space: nowrap;
+  font-size: 2.5rem;
+  animation: moveText 12s linear infinite;
 }
 
-.marquee h1 {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 12s linear infinite;
+/* Moving animation */
+@keyframes moveText {
+  0% {
+    left: 100%;
+    opacity: 1;
+  }
+  40% {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  60% {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+  100% {
+    left: -100%;
+    opacity: 1;
+  }
 }
 
-@keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+/* Blink class (added by JS) */
+.blink {
+  animation: blink 0.8s 3;
 }
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
   
   /* MOBILE STYLES */
@@ -76,3 +107,4 @@ body {
   
 
   
+
