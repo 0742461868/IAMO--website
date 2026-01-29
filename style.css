@@ -31,46 +31,31 @@ body {
     max-width: 100%;
     height: auto;
   }
-.marquee-container {
+.flash-text {
+  animation: flashColor 2s infinite;
+}
+
+@keyframes flashColor {
+  0%   { color: #000; }
+  50%  { color: #ff6600; }
+  100% { color: #000; }
+}
+.marquee {
   width: 100%;
   overflow: hidden;
-  position: relative;
-  height: 90px;
-}
-
-#marqueeText {
-  position: absolute;
   white-space: nowrap;
-  font-size: 2.5rem;
-  left: 100%;
-  animation: slideText 10s linear infinite;
 }
 
-/* Move → center → move out */
-@keyframes slideText {
-  0% {
-    transform: translateX(0);
-  }
-  40% {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  100% {
-    left: -100%;
-    transform: translateX(0);
-  }
+.marquee h1 {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 12s linear infinite;
 }
 
-/* Blink effect */
-.blink {
-  animation: blink 0.6s ease-in-out 4;
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
 
   
   /* MOBILE STYLES */
@@ -100,5 +85,6 @@ body {
   
 
   
+
 
 
