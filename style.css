@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    background-color: rgba(135, 206, 235, 0.9);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+  
+  .section {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 40px;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* MOBILE STYLES */
+  @media (max-width: 768px) {
+  
+    nav {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    nav a {
+      margin: 10px 0;
+    }
+  
+    .section {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 26px;
+    }
+  
+    h2 {
+      font-size: 22px;
+    }
+  }
+  
+  
