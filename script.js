@@ -1,13 +1,25 @@
 const marquee = document.getElementById("marqueeText");
 
-setInterval(() => {
-  marquee.style.animationPlayState = "paused";
+const totalDuration = 10000; // must match CSS animation duration
+const pauseTime = 4000;      // when it reaches center (40%)
+const blinkDuration = 2500;
 
-  marquee.classList.add("blink");
+function runMarquee() {
+  marquee.style.animation = "slideText 10s linear infinite";
 
   setTimeout(() => {
-    marquee.classList.remove("blink");
-    marquee.style.animationPlayState = "running";
-  }, 2500);
+    // pause at center
+    marquee.style.animationPlayState = "paused";
 
-}, 4800);
+    // blink
+    marquee.classList.add("blink");
+
+    setTimeout(() => {
+      marquee.classList.remove("blink");
+      marquee.style.animationPlayState = "running";
+    }, blinkDuration);
+
+  }, pauseTime);
+}
+
+runMarquee();
